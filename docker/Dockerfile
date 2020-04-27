@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y git python python-setuptools python-pip
 RUN easy_install -U setuptools==30.0.0
 RUN pip install \
         -chttps://opendev.org/openstack/requirements/raw/branch/$OPENSTACK_TAG/upper-constraints.txt \
-        -chttps://git.opnfv.org/yardstick/plain/upper-constraints.txt?h=$BRANCH \
+        -chttps://raw.githubusercontent.com/Cloud-Performance-Lab/yardstick/${BRANCH}/upper-constraints.txt \
         appdirs==1.4.0 pyopenssl==17.5.0 openstacksdk==0.11.3 python-heatclient==1.14.0 ansible==2.5.5
 
 RUN mkdir -p ${REPOS_DIR}
@@ -38,7 +38,7 @@ RUN git config --global http.sslVerify false
 #For developers: To test your changes you must comment out the git clone for ${YARDSTICK_REPO_DIR}.
 #You must also uncomment the RUN and COPY commands below.
 #You must run docker build from your yardstick directory on the host.
-RUN git clone --depth 1 -b $BRANCH https://gerrit.opnfv.org/gerrit/yardstick ${YARDSTICK_REPO_DIR}
+RUN git clone --depth 1 -b $BRANCH https://github.com/Cloud-Performance-Lab/yardstick.git ${YARDSTICK_REPO_DIR}
 #RUN mkdir ${YARDSTICK_REPO_DIR}
 #COPY ./ ${YARDSTICK_REPO_DIR}
 RUN git clone --depth 1 https://gerrit.opnfv.org/gerrit/releng ${RELENG_REPO_DIR}
