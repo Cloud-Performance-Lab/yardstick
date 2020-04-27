@@ -16,6 +16,7 @@ from novaclient import client as novaclient
 from glanceclient import client as glanceclient
 from keystoneauth1 import loading
 from keystoneauth1 import session
+from keystoneauth1.exceptions.base import ClientException
 from neutronclient.neutron import client as neutronclient
 import shade
 from shade import exc

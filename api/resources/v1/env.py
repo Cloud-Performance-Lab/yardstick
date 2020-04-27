@@ -298,6 +298,10 @@ class V1Env(ApiResource):
         except (subprocess.CalledProcessError, OSError) as e:
             self._update_task_error(task_id, str(e))
             LOG.exception('Prepare env failed')
+        except Exception as e:
+            self._update_task_error(task_id, type(e).__name__ + ': ' + str(e))
+            LOG.exception('Prepare env failed')
+            raise
 
     def _create_directories(self):
         utils.makedirs(consts.CONF_DIR)
@@ -322,8 +326,13 @@ class V1Env(ApiResource):
                 raise
 
     def _append_external_network(self, rc_file):
-        neutron_client = openstack_utils.get_neutron_client()
-        networks = neutron_client.list_networks()['networks']
+        try:
+            neutron_client = openstack_utils.get_neutron_client()
+            networks = neutron_client.list_networks()['networks']
+        except openstack_utils.ClientException as e:
+            LOG.error(type(e).__name__ + ': ' + str(e))
+            return
+
         try:
             ext_network = next(n['name']
                                for n in networks if n['router:external'])
