@@ -120,19 +120,19 @@ class Task(object):     # pragma: no cover
             except KeyboardInterrupt:
                 raise
             except Exception:  # pylint: disable=broad-except
-                LOG.error('Testcase: "%s" FAILED!!!', tasks[i]['case_name'],
+                LOG.error('Testcase: "%s" FAILED!!!', tasks[i]['output_name'],
                           exc_info=True)
-                testcases[tasks[i]['case_name']] = {'criteria': 'FAIL',
+                testcases[tasks[i]['output_name']] = {'criteria': 'FAIL',
                                                     'tc_data': []}
             else:
                 if success:
-                    LOG.info('Testcase: "%s" SUCCESS!!!', tasks[i]['case_name'])
-                    testcases[tasks[i]['case_name']] = {'criteria': 'PASS',
+                    LOG.info('Testcase: "%s" SUCCESS!!!', tasks[i]['output_name'])
+                    testcases[tasks[i]['output_name']] = {'criteria': 'PASS',
                                                         'tc_data': data}
                 else:
-                    LOG.error('Testcase: "%s" FAILED!!!', tasks[i]['case_name'],
+                    LOG.error('Testcase: "%s" FAILED!!!', tasks[i]['output_name'],
                               exc_info=True)
-                    testcases[tasks[i]['case_name']] = {'criteria': 'FAIL',
+                    testcases[tasks[i]['output_name']] = {'criteria': 'FAIL',
                                                         'tc_data': data}
 
             if args.keep_deploy:
@@ -576,7 +576,7 @@ class TaskParser(object):       # pragma: no cover
         # add tc and task id for influxdb extended tags
         for scenario in cfg["scenarios"]:
             task_name = os.path.splitext(os.path.basename(self.path))[0]
-            scenario["tc"] = task_name
+            scenario['tc'] = cfg['output_name']
             scenario["task_id"] = task_id
             # embed task path into scenario so we can load other files
             # relative to task path
@@ -586,6 +586,7 @@ class TaskParser(object):       # pragma: no cover
 
         # TODO we need something better here, a class that represent the file
         return {'scenarios': cfg['scenarios'],
+                'output_name': cfg['output_name'],
                 'run_in_parallel': run_in_parallel,
                 'meet_precondition': meet_precondition,
                 'contexts': _contexts,
