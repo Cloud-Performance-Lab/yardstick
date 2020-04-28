@@ -11,7 +11,7 @@ FROM ubuntu:16.04
 
 LABEL image=opnfv/yardstick
 
-ARG BRANCH=master
+ARG BRANCH=stable/iruya
 ARG OPENSTACK_TAG=stable/stein
 
 # GIT repo directory
