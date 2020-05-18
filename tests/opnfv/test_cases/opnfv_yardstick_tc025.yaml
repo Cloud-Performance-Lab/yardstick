@@ -17,6 +17,8 @@ description: >
 {% set jump_host = jump_host or 'node0' %}
 {% set attack_host = attack_host or 'node1' %}
 {% set monitor_time = monitor_time or 30 %}
+{% set output_name = output_name or "tc_025" %}
+output_name: {{ output_name }}
 
 scenarios:
 -

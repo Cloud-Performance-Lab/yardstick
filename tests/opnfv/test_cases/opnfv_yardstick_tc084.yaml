@@ -22,6 +22,8 @@ description: >
 {% set runspec_tune = runspec_tune or 'base' %}
 {% set runspec_size = runspec_size or 'ref' %}
 {% set runspec_rate = runspec_rate or 1 %}
+{% set output_name = output_name or "tc_084" %}
+output_name: {{ output_name }}
 
 scenarios:
 -

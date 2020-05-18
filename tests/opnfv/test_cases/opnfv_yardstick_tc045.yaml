@@ -16,6 +16,8 @@ description: >
 {% set file = file or '/etc/yardstick/pod.yaml' %}
 {% set attack_host = attack_host or "node1" %}
 {% set attack_process = attack_process or "neutron-server" %}
+{% set output_name = output_name or "tc_045" %}
+output_name: {{ output_name }}
 
 scenarios:
 -
@@ -54,4 +56,3 @@ context:
   type: Node
   name: LF
   file: {{file}}
-

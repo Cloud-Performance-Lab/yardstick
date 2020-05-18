@@ -13,6 +13,8 @@ description: >
     Yardstick TC040 config file;
     Running Parser Yang-to-Tosca module as a tool, validating output against expected outcome.
 
+{% set output_name = output_name or "tc_040" %}
+output_name: {{ output_name }}
 
 scenarios:
 -

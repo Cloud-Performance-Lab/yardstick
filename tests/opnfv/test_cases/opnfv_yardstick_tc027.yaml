@@ -16,6 +16,9 @@ description: >
 {% set openrc = openrc or "/opt/admin-openrc.sh" %}
 {% set external_network = external_network or "ext-net" %}
 {% set file = file or '/etc/yardstick/pod.yaml' %}
+{% set output_name = output_name or "tc_027" %}
+output_name: {{ output_name }}
+
 scenarios:
 -
   type: Ping6
@@ -45,4 +48,3 @@ context:
   type: Node
   name: IPV6
   file: {{file}}
-

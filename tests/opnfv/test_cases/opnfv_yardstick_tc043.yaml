@@ -16,6 +16,9 @@ description: >
 {% set host = host or "node1" %}
 {% set target = target or "node2" %}
 {% set file = file or '/etc/yardstick/pod.yaml' %}
+{% set output_name = output_name or "tc_043" %}
+output_name: {{ output_name }}
+
 scenarios:
 -
   type: Ping
@@ -38,4 +41,3 @@ context:
   type: Node
   name: LF
   file: {{file}}
-

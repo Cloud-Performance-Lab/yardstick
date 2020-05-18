@@ -16,6 +16,8 @@ description: >
 {% set provider = provider or none %}
 {% set physical_network = physical_network or 'physnet1' %}
 {% set segmentation_id = segmentation_id or none %}
+{% set output_name = output_name or "tc_012" %}
+output_name: {{ output_name }}
 
 scenarios:
 -
@@ -57,4 +59,3 @@ context:
       segmentation_id: {{segmentation_id}}
         {% endif %}
       {% endif %}
-

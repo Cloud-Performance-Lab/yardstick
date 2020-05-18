@@ -18,6 +18,8 @@ description: >
 {% set attack_process = attack_process or "nova-conductor" %}
 {% set inst_param = inst_param or "tc089 yardstick-image yardstick-flavor internal-network" %}
 {% set inst_name = inst_name or "tc089" %}
+{% set output_name = output_name or "tc_089" %}
+output_name: {{ output_name }}
 
 scenarios:
   -

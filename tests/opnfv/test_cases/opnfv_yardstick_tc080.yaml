@@ -14,6 +14,9 @@ description: >
     Yardstick TC080 config file;
     measure network latency between containers in k8s using ping;
 
+{% set output_name = output_name or "tc_080" %}
+output_name: {{ output_name }}
+
 scenarios:
 -
   type: Ping

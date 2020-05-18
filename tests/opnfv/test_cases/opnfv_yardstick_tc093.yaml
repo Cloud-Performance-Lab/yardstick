@@ -17,6 +17,8 @@ description: >
 {% set attack_host_cmp_one = attack_host_cmp_one or 'node4' %}
 {% set attack_host_cmp_two = attack_host_cmp_two or 'node5' %}
 {% set systemd_service_name = systemd_service_name or 'openvswitch-switch'%}
+{% set output_name = output_name or "tc_093" %}
+output_name: {{ output_name }}
 
 scenarios:
 
@@ -310,4 +312,3 @@ contexts:
             test_one:
                 cidr: '10.0.1.0/24'
                 router: 'test_router'
-

@@ -17,6 +17,8 @@ description: >
 {% set attack_host = attack_host or "node1" %}
 {% set attack_process = attack_process or "mysql" %}
 {% set monitor_time = monitor_time or 30 %}
+{% set output_name = output_name or "tc_090" %}
+output_name: {{ output_name }}
 
 scenarios:
 -
@@ -73,4 +75,3 @@ context:
   type: Node
   name: LF
   file: {{file}}
-

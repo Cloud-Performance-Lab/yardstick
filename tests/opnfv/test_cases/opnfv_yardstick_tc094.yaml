@@ -16,8 +16,12 @@
 {% set topology = topology or "../../../samples/vnf_samples/nsut/prox/prox-tg-topology-2.yaml" %}
 {% set vnf_config = vnf_config or "../../../samples/vnf_samples/nsut/prox/configs/handle_l2fwd-2.cfg" %}
 {% set tg_config = tg_config or "../../../samples/vnf_samples/nsut/prox/configs/gen_l2fwd-2.cfg" %}
+
 ---
 schema: "yardstick:task:0.1"
+{% set output_name = output_name or "tc_094" %}
+output_name: {{ output_name }}
+
 description: >
     Yardstick NSB TC094 config file;
     Measures network metrics such as Throughput and Latency of the DPDK

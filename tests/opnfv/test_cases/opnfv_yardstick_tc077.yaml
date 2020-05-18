@@ -13,6 +13,9 @@ description: >
     Yardstick TC077 config file;
     Extend TC008 to run pktgen-dpdk (sender) and testpmd (receiver) inside VM.
 
+{% set output_name = output_name or "tc_077" %}
+output_name: {{ output_name }}
+
 scenarios:
 {% for pkt_size in [64, 128, 256, 512, 1024, 1280, 1518] %}
   {% for num_ports in [1, 10, 50, 100, 500, 1000] %}

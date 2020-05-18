@@ -15,6 +15,8 @@ description: >
 
 {% set file = file or '/etc/yardstick/pod.yaml' %}
 {% set attack_host = attack_host or 'node6' %}
+{% set output_name = output_name or "tc_087" %}
+output_name: {{ output_name }}
 
 scenarios:
 
@@ -275,4 +277,3 @@ contexts:
             test_one:
                 cidr: '10.0.1.0/24'
                 router: 'test_router'
-

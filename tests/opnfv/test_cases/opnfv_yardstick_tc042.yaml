@@ -12,6 +12,8 @@ schema: "yardstick:task:0.1"
 description: >
     Yardstick TC042 config file;
     Measure network latency using testpmd and pktgen-dpdk.
+{% set output_name = output_name or "tc_042" %}
+output_name: {{ output_name }}
 
 scenarios:
 -

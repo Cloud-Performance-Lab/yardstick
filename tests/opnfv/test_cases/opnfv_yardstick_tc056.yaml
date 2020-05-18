@@ -18,6 +18,8 @@ description: >
 {% set monitor_time = monitor_time or 10 %}
 {% set monitor_number = monitor_number or 3 %}
 {% set attack_process = attack_process or "rabbitmq-server" %}
+{% set output_name = output_name or "tc_056" %}
+output_name: {{ output_name }}
 
 scenarios:
 -
@@ -77,4 +79,3 @@ context:
   type: Node
   name: LF
   file: {{file}}
-

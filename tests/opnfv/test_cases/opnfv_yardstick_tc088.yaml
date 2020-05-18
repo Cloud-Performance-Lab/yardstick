@@ -18,6 +18,8 @@ description: >
 {% set attack_process = attack_process or "nova-scheduler" %}
 {% set inst_param = inst_param or "tc088 yardstick-image yardstick-flavor internal-network" %}
 {% set inst_name = inst_name or "tc088" %}
+{% set output_name = output_name or "tc_088" %}
+output_name: {{ output_name }}
 
 scenarios:
   -

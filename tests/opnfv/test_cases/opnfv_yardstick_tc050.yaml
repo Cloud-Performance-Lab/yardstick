@@ -16,6 +16,8 @@ description: >
 {% set attack_host = attack_host or "node1" %}
 {% set interface_name = interface_name or 'br-mgmt' %}
 {% set file = file or '/etc/yardstick/pod.yaml' %}
+{% set output_name = output_name or "tc_050" %}
+output_name: {{ output_name }}
 
 scenarios:
   -

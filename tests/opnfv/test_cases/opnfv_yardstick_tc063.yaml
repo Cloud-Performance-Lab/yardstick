@@ -15,6 +15,8 @@ description: >
 
 {% set file = file or '/etc/yardstick/pod.yaml' %}
 {% set host = host or "node5" %}
+{% set output_name = output_name or "tc_063" %}
+output_name: {{ output_name }}
 
 scenarios:
 -

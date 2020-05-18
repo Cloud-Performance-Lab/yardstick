@@ -14,6 +14,8 @@ description: >
     Yardstick TC081 config file;
     measure network latency between container and VM using ping;
 
+{% set output_name = output_name or "tc_081" %}
+output_name: {{ output_name }}
 
 scenarios:
 -

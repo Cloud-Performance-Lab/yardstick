@@ -16,6 +16,8 @@ description: >
 {% set file = file or '/etc/yardstick/pod.yaml' %}
 {% set attack_host = attack_host or "node1" %}
 {% set attack_process = attack_process or "swift-proxy" %}
+{% set output_name = output_name or "tc_049" %}
+output_name: {{ output_name }}
 
 scenarios:
 -
