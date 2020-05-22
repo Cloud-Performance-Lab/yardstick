@@ -1,0 +1,18 @@
+---
+- name: Make iavf
+  make:
+    chdir: "{{ iavf_path }}/src"
+    params:
+      BUILD_KERNEL: "{{ chroot_kernel }}"
+
+- name: Make iavf install
+  make:
+    chdir: "{{ iavf_path }}/src"
+    target: install
+    params:
+      BUILD_KERNEL: "{{ chroot_kernel }}"
+
+#- name: Configure iavf to load on boot
+#  copy:
+#    content: iavf
+#    dest: /etc/modules-load.d/iavf.conf

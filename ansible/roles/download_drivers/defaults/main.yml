@@ -20,3 +20,11 @@ i40evf_path: "{{ i40evf_dest }}/{{ i40evf_gzfile|regex_replace('[.]tar[.]gz$', '
 i40evf_checksum:
   "3.4.2": "sha256:a8e2a722fb2f8ac874cb39545a331761841f1724830ff1581d2012dd37314645"
   "3.5.13": "sha256:e57b95b694c8480b905e72ea13caac8714d6bb0c9eabe37cca655505b808f033"
+iavf_version: "3.9.5"
+iavf_gzfile: "iavf-{{ iavf_version }}.tar.gz"
+iavf_url: "https://netix.dl.sourceforge.net/project/e1000/iavf%20stable/{{ iavf_version }}/{{ iavf_gzfile }}"
+#iavf_url: https://sourceforge.net/projects/e1000/files/iavf%20stable/3.9.5/iavf-3.9.5.tar.gz/download
+iavf_dest: "{{ clone_dest }}/"
+iavf_path: "{{ iavf_dest }}/{{ iavf_gzfile|regex_replace('[.]tar[.]gz$', '') }}"
+iavf_checksum:
+  "3.9.5": "sha256:9cf6f5b360a5b4412feb280e560c96d9a846e00f20cb85ebe21ed2ed6b701dd0"

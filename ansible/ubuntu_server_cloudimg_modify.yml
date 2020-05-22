@@ -36,4 +36,5 @@
     - download_cachestat
     # there is no install for cachestat
 #    - install_cachestat
-
+    - download_drivers
+    - install_drivers

@@ -13,3 +13,4 @@
 # limitations under the License.
 ---
 - include: i40evf.yml
+- include: iavf.yml

@@ -26,3 +26,4 @@
 
 # Install drivers
 - include: i40evf.yml
+- include: iavf.yml
