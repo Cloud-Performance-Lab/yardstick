@@ -133,8 +133,6 @@ def _worker_process(queue, cls, method_name, scenario_cfg,
 class IterationRunner(base.Runner):
     """Run a scenario for a configurable number of times
 
-If the scenario ends before the time has elapsed, it will be started again.
-
   Parameters
     iterations - amount of times the scenario will be run for
         type:    int

@@ -134,7 +134,7 @@ If the scenario ends before the time has elapsed, it will be started again.
     duration - amount of time the scenario will be run for
         type:    int
         unit:    seconds
-        default: 1 sec
+        default: 60 sec
     interval - time to wait between each scenario invocation
         type:    int
         unit:    seconds
